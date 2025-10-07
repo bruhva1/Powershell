@@ -32,3 +32,4 @@ Add-Content -Path $logfile -Value "--------------------`n"
 
 Write-Host "Thank you. Your information has been saved, $name."
 Write-Host "File has been saved at: $(Resolve-Path $logfile)"
+

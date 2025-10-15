@@ -33,19 +33,17 @@ Write-Host "n`IP Configuration:"
 Add-Content -Path $systeminfo -Value ""
 Add-Content -Path $systeminfo -Value "IP Configuration:"
 
-foreach ($line in $ipconfig) {
-	Write-Host " Interface: $($line.InterfaceAlias)"
-	Add-Content -Path $systeminfo -Value " Interface: $($line.InterfaceAlias)"
+	Write-Host " Interface: $($ipconfig.InterfaceAlias)"
+	Add-Content -Path $systeminfo -Value " Interface: $($ipconfig.InterfaceAlias)"
 
-	Write-Host " IPv4 Address: $($line.IPv4Address.IPAddress)"
-	Add-Content -Path $systeminfo -Value " IPv4 Address: $($line.IPv4Address.IPAddress)"
+	Write-Host " IPv4 Address: $($ipconfig.IPv4Address.IPAddress)"
+	Add-Content -Path $systeminfo -Value " IPv4 Address: $($ipconfig.IPv4Address.IPAddress)"
 
-	Write-Host " Default Gateway: $($line.IPv4DefaultGateway.NextHop)"
-	Add-Content -Path $systeminfo -Value " Default Gateway: $($line.IPv4DefaultGateway.NextHop)"
+	Write-Host " Default Gateway: $($ipconfig.IPv4DefaultGateway.NextHop)"
+	Add-Content -Path $systeminfo -Value " Default Gateway: $($ipconfig.IPv4DefaultGateway.NextHop)"
 
 	Write-Host ""
 	Add-Content -Path $systeminfo -Value ""
-}
 
 
 #Prints where the data is stored in files
